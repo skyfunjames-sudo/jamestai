@@ -4,8 +4,8 @@ import pandas as pd
 # --- 1. 設定頁面基本資訊 ---
 st.set_page_config(page_title="臺中社宅租金試算(2025新制)", page_icon="🏠")
 
-st.title("🏠 臺中市社宅包租代管333計畫")
-st.header("新版租金評定試算系統 (2025/12/01啟用)")
+st.title("🏠 臺中市社宅包租代管JAMES製作")
+st.header("新版租金評定試算系統 (測試版請以紙本為主)")
 st.markdown("---")
 
 # --- 2. 載入數據 (來自您的原始資料) ---
@@ -130,4 +130,5 @@ with st.expander("查看詳細計算公式"):
     st.write(f"3. 調整後單價: {base_price} * {1 + loc_rate + deco_rate} = {round(adjusted_price_per_ping, 4)}")
     st.write(f"4. 乘上坪數: {round(adjusted_price_per_ping, 4)} * {area} = {round(adjusted_price_per_ping * area)}")
     st.write(f"5. 加上設備: + {equip_add}")
+
     st.write(f"6. 總計: {rent_total}")
