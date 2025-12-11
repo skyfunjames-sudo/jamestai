@@ -7,7 +7,7 @@ import pandas as pd
 st.set_page_config(page_title="JAMES社宅租金評定測試", page_icon="🏠")
 
 st.title("🏠 JAMES - 中區租金評定測試版")
-st.caption("僅供試算參考，實際要以中心公會審核為主")
+st.caption("僅供試算參考，實際要以中心系統及公會審核為主。有可能中心系統評估與試算結果不同")
 st.markdown("---")
 # ==========================================
 # 2. 定義資料庫 (Data Definitions)
@@ -228,7 +228,7 @@ with col2:
 
     # 設備邏輯 (整層上限2000, 套房上限1000)
     max_equip = 2000 if house_type == "整層(戶)" else 1000
-    equip_add = st.number_input(f"8. 設備外加 (最高 {max_equip})", min_value=0, max_value=max_equip, step=100)
+    equip_add = st.number_input(f"8. 設備外加 (最高 {max_equip})建議用最保守0元", min_value=0, max_value=max_equip, step=100)
 
 # ==========================================
 # 4. 計算邏輯
@@ -284,3 +284,4 @@ with st.expander("查看詳細計算公式"):
     st.write(f"4. 乘上坪數: {round(adjusted_price_per_ping, 4)} * {area} = {round(adjusted_price_per_ping * area)}")
     st.write(f"5. 加上設備: + {equip_add}")
     st.write(f"6. 總計: {rent_total}")
+
